@@ -4,9 +4,7 @@ import { upperCase } from "@/shared/util";
 import Image from "next/image";
 import React from "react";
 
-export default function Detail({
-data
-}) {
+export default function Detail({ data }) {
   // console.log(data);
   return (
     <div>
@@ -15,7 +13,11 @@ data
         <div className="  bg-white rounded-3xl shadow-xl">
           <div className="grid rounded-3xl max-w-sm shadow-sm bg-slate-100  flex-col">
             <Image
-              src={data.Poster?data.Poster:"https://www.prokerala.com/movies/assets/img/no-poster-available.jpg"}
+              src={
+                data.Poster
+                  ? data.Poster
+                  : "https://www.prokerala.com/movies/assets/img/no-poster-available.jpg"
+              }
               width="390"
               height="200"
               className="rounded-t-3xl justify-center grid h-80 object-cover"
@@ -79,7 +81,7 @@ data
   );
 }
 export async function getServerSideProps({ query }) {
-//   console.log(query);
+  //   console.log(query);
 
   const id = query.movie_id;
 

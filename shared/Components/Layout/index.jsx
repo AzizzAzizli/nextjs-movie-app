@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "../Card";
 
 export const Layout = ({ quickMovies, input, inputRef, onKeydown,loading, onClick }) => {
-    console.log(quickMovies);
+    // console.log(quickMovies);
   return (
     <>
       <main className=" bg-slate-500 min-h-[100vh]">

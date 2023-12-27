@@ -1,9 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import { upperCase } from "@/shared/util";
-export const Card = ({ Poster, Title, Year, Type, imdbID, index ,onClick}) => {
+export const Card = ({ Poster, Title, Year, Type, imdbID, index, onClick }) => {
   return (
-    <div onClick={onClick} className="  bg-white rounded-3xl shadow-xl">
+    <div
+      onClick={onClick}
+      className=" cursor-pointer bg-white rounded-3xl shadow-xl"
+    >
       <div className="grid rounded-3xl max-w-sm shadow-sm bg-slate-100  flex-col">
         <Image
           src={Poster}

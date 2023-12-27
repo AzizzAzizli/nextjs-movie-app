@@ -17,7 +17,7 @@ export default function SearchPage() {
     if (e.key === "Enter") {
       try {
         let moviesData = await getMovies(value);
-        console.log(moviesData.Search);
+        // console.log(moviesData.Search);
 
         setMovies(moviesData.Search);
 
@@ -32,7 +32,7 @@ export default function SearchPage() {
     }
   }
 
-  console.log(movies);
+  // console.log(movies);
   function getDetail(id) {
     push(`search/${id}/`);
   }
