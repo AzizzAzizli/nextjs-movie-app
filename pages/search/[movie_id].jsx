@@ -1,5 +1,6 @@
 import { Header } from "@/shared/Components/Header";
 import { getMovieDetail } from "@/shared/services/getMovie";
+import { upperCase } from "@/shared/util";
 import Image from "next/image";
 import React from "react";
 
@@ -66,7 +67,7 @@ data
                 <div className="flex flex-col items-end">
                   <div className="h-7" />
                   <span className="text-3xl  font-bold  gap-x-2 text-slate-300">
-                    # {data.Type}
+                    # {upperCase(data.Type)}
                   </span>
                 </div>
               </div>

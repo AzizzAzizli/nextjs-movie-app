@@ -6,45 +6,40 @@ import React, { useRef, useState } from "react";
 // import { getMovies } from "@/shared/services/getMovie";
 
 export default function SearchPage() {
-  const{push}=useRouter()
+  const { push } = useRouter();
   const inputRef = useRef();
-  const [inputValue, setInputValue] = useState("");
+
   const [movies, setMovies] = useState([]);
-  const [loading,setLoading]=useState(false)
+  const [loading, setLoading] = useState(false);
 
   async function handleInput(e) {
     let value = inputRef.current?.value;
     if (e.key === "Enter") {
-      setInputValue(value);
-      inputRef.current.value = "";
-
       try {
-        let moviesData = await getMovies(inputValue);
-        console.log(moviesData);
+        let moviesData = await getMovies(value);
+        console.log(moviesData.Search);
+
         setMovies(moviesData.Search);
-        setLoading(true)
-      
 
-
+        setLoading(true);
       } catch (error) {
         console.error("Error fetching movies:", error);
         setLoading(false);
       } finally {
         setLoading(false);
+        inputRef.current.value = "";
       }
     }
   }
 
   console.log(movies);
-  console.log(inputValue);
   function getDetail(id) {
-  push(`search/${id}/`)
-}
+    push(`search/${id}/`);
+  }
   return (
     <div>
       <Header />
       <main>
- 
         <Layout
           onClick={getDetail}
           onKeydown={handleInput}

@@ -9,9 +9,11 @@ export const Layout = ({ quickMovies, input, inputRef, onKeydown,loading, onClic
         {input ? (
           <div className=" flex justify-center pt-5">
             <input
+              
+              placeholder="Search..."
               onKeyDown={onKeydown}
               ref={inputRef}
-              className="  outline-blue-800  outline-1 p-2    rounded-xl"
+              className="  outline-blue-800  capitalize font-sans font-semibold outline-1 p-3  xl:w-4/12  md:w-6/12 rounded-xl"
               type="search"
             />
           </div>

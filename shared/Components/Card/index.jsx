@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { upperCase } from "@/shared/util";
 export const Card = ({ Poster, Title, Year, Type, imdbID, index ,onClick}) => {
   return (
     <div onClick={onClick} className="  bg-white rounded-3xl shadow-xl">
@@ -18,8 +19,8 @@ export const Card = ({ Poster, Title, Year, Type, imdbID, index ,onClick}) => {
           </p>
           <span className="text-slate-400 pt-2 font-semibold">({Year})</span>
           <div className="h-28">
-            <span className="line-clamp-4 py-2 text-base font-light leading-relaxed">
-              Type: {Type}
+            <span className="line-clamp-4 py-2 text-slate-700 text-2xl  font-semibold  leading-relaxed">
+              Type: {upperCase(Type)}
             </span>
           </div>
           <div className=" grid-cols-2 flex group justify-between">
