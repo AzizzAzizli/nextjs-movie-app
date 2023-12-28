@@ -8,7 +8,7 @@ export default function Home({ quickMovies }) {
 const {push} =useRouter()
 
   function getDetail(id) {
-    push(`${id}/`);
+    push(`search/${id}/`);
   }
   return (
     <>
